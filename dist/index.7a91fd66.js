@@ -31,7 +31,17 @@ let string = `/*
     border-radius:50%;
     background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 19%, rgba(0,0,0,1) 19%);
 }
-
+@keyframes animation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+#div{
+    animation: animation 8s infinite linear;
+}
 `;
 let n = 0;
 console.log(string.length);
@@ -48,7 +58,7 @@ let step = ()=>{
             n += 1;
             step();
         }
-    }, 50);
+    }, 0);
 };
 step();
 
