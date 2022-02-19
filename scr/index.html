@@ -4,27 +4,69 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
     <title>chaochao</title>
 </head>
 
 <body>
-    <span id="demo">
-        <div id='gossip-wrapper'>
-            <div id="gossip">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <div id="gossip-text">
-                无极之道
-            </div>
-        </div>
-    </span>
+    <div id="demo"></div>
+    <div id="divWrapper">
+        <div id="div"></div>
+    </div>
     <style id="style"></style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #demo {
+            /* 自动换行 */
+            word-break: break-all;
+        }
+
+        #div {
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 10px;
+        }
+
+        #div::before {
+            content: '';
+            display: block;
+            position: absolute;
+        }
+
+        #div::after {
+            content: '';
+            display: block;
+            position: absolute;
+        }
+
+        /*
+        媒体查询
+        小于500px就启用
+        */
+        @media (max-width:500px) {
+            #demo {
+                height: 65vh;
+                overflow: auto;
+            }
+
+            #divWrapper {
+                height: 35vh;
+            }
+
+            #div {
+                position: relative;
+                top: 20px;
+                right: 0;
+            }
+        }
+    </style>
     <script src="main.js"></script>
 </body>
 
